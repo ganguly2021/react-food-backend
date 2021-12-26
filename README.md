@@ -1,2 +1,2 @@
 # react-food-backend
-ReactJS App Backed in Node, Express &amp; GraphQL with MongoDB Database
+ReactJS App Backend in Node, Express &amp; GraphQL with MongoDB Database

@@ -1,5 +1,5 @@
 // create graphql schema for recipe
-const schema = (`
+const recipeSchema = (`
   type Recipe {
     name: String!
     category: String!
@@ -11,6 +11,20 @@ const schema = (`
   }
 `);
 
+// create graphql mutation for recipe
+const recipeMutation = (`
+  addRecipe(
+    name: String!, 
+    description: String!, 
+    category: String!,
+    instructions: String!
+    username: String
+    ): Recipe
+`);
+
 
 // export graphql recipe schema
-module.exports = schema
+module.exports = {
+  recipeSchema,
+  recipeMutation
+}

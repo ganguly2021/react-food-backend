@@ -1,7 +1,7 @@
 // import graphql
 const { buildSchema } = require('graphql');
-const userSchema = require('./user');
-const recipeSchema = require('./recipe');
+const { userSchema, userMutation } = require('./user');
+const { recipeSchema, recipeMutation } = require('./recipe');
 
 // create graphql root schema
 const rootSchema = buildSchema(`
@@ -13,6 +13,13 @@ const rootSchema = buildSchema(`
   ${userSchema}
 
   ${recipeSchema}
+
+  type Mutation {
+
+    ${recipeMutation}
+
+    ${userMutation}
+  }
 
 `);
 

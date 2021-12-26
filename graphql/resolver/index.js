@@ -11,6 +11,25 @@ const rootResolver = {
       likes: 100000,
       username: "mango_man",
     }
+  },
+  addRecipe: (body) => {
+    const {
+      name,
+      category,
+      description,
+      instructions,
+      likes,
+      username
+    } = body
+
+    return {
+      name,
+      category,
+      description,
+      instructions,
+      likes,
+      username
+    };
   }
 };
 

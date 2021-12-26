@@ -1,5 +1,5 @@
 // create graphql schema for user
-const schema = (`
+const userSchema = (`
   type User {
     username: String!
     password: String!
@@ -10,5 +10,12 @@ const schema = (`
 `);
 
 
+const userMutation = (`
+  
+`);
+
 // export graphql user schema
-module.exports = schema
+module.exports = {
+  userSchema,
+  userMutation
+}

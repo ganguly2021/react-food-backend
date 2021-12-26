@@ -6,16 +6,28 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const morgan = require('morgan');
-const port = process.env.PORT;
 
+const port = process.env.PORT;
 const database = require('./database');
 
+// graphql setup
+const { graphqlHTTP } = require('express-graphql');
+const rootSchema = require('./graphql/schema');
+const rootResolver = require('./graphql/resolver');
 
 // middleware setup
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// graphql server start
+app.use('/graphql', graphqlHTTP({
+  schema: rootSchema,
+  rootValue: rootResolver,
+  graphiql: true
+}));
+
 
 // routes
 app.get('/', (req, res) => {

@@ -8,11 +8,19 @@ const userSchema = (`
     joinDate: String
     favourites: [Recipe]
   }
+
+  type Token {
+    token: String!
+  }
 `);
 
 
 const userMutation = (`
-  
+  signupUser(
+    username: String!,
+    email: String!,
+    password: String!
+  ): Token
 `);
 
 // export graphql user schema

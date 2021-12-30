@@ -7,7 +7,7 @@ const { recipeSchema, recipeMutation } = require('./recipe');
 const rootSchema = buildSchema(`
   type Query {
     hello: String!
-    getRecipe: Recipe
+    getAllRecipes: [Recipe]
   }
 
   ${userSchema}

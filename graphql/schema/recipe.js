@@ -20,6 +20,7 @@ const recipeMutation = (`
     instructions: String!
     username: String
     ): Recipe
+  
 `);
 
 

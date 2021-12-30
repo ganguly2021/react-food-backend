@@ -1,6 +1,7 @@
 // create graphql schema for user
 const userSchema = (`
   type User {
+    _id: ID
     username: String!
     password: String!
     email: String!

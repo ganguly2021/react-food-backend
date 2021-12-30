@@ -1,6 +1,7 @@
 // create graphql schema for recipe
 const recipeSchema = (`
   type Recipe {
+    _id: ID
     name: String!
     category: String!
     description: String!

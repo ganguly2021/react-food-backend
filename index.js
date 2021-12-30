@@ -15,8 +15,13 @@ const { graphqlHTTP } = require('express-graphql');
 const rootSchema = require('./graphql/schema');
 const rootResolver = require('./graphql/resolver');
 
+const corsOption = {
+  origin: process.env.FRON_END_URL,
+  credentials: true
+}
+
 // middleware setup
-app.use(cors());
+app.use(cors(corsOption));
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

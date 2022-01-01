@@ -21,8 +21,28 @@ const isPasswordMatch = (user_pass, db_pass) => {
   return isMatch;
 }
 
+const isValidToken = async (req, res, next) => {
+  // get token from HTTP headers
+  const token = req.headers['authorization'];
+
+  // if token is not null
+  if (token !== "null") {
+    try {
+      // decrypt token
+      const payload = await jwt.verify(token, token_key);
+      console.log(payload);
+
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  next();
+}
+
 module.exports = {
   createAuthToken,
   hashPassword,
-  isPasswordMatch
+  isPasswordMatch,
+  isValidToken
 }

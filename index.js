@@ -15,6 +15,8 @@ const { graphqlHTTP } = require('express-graphql');
 const rootSchema = require('./graphql/schema');
 const rootResolver = require('./graphql/resolver');
 
+const { isValidToken } = require('./helper/auth');
+
 const corsOption = {
   origin: process.env.FRON_END_URL,
   credentials: true
@@ -25,6 +27,7 @@ app.use(cors(corsOption));
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(isValidToken);
 
 // graphql server start
 app.use('/graphql', graphqlHTTP({

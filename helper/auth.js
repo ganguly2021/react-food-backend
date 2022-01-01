@@ -30,7 +30,9 @@ const isValidToken = async (req, res, next) => {
     try {
       // decrypt token
       const payload = await jwt.verify(token, token_key);
-      console.log(payload);
+
+      // set payload to request object
+      req.currentUser = payload;
 
     } catch (err) {
       console.log(err);

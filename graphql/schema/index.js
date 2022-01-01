@@ -8,6 +8,7 @@ const rootSchema = buildSchema(`
   type Query {
     hello: String!
     getAllRecipes: [Recipe]
+    getCurrentUser: User
   }
 
   ${userSchema}

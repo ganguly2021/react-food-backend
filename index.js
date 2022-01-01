@@ -30,10 +30,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(isValidToken);
 
 // graphql server start
-app.use('/graphql', graphqlHTTP({
-  schema: rootSchema,
-  rootValue: rootResolver,
-  graphiql: true
+app.use('/graphql', graphqlHTTP((req, res, graphQLParams) => {
+
+  return {
+    schema: rootSchema,
+    rootValue: rootResolver,
+    graphiql: true,
+    context: {
+      currentUser: req.currentUser
+    }
+  }
 }));
 
 

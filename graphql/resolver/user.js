@@ -53,6 +53,29 @@ const userResolver = {
 
     // return new user document
     return { token: createAuthToken(payload, '1hr') };
+  },
+  getCurrentUser: async (body, context) => {
+    const currentUser = context.currentUser;
+
+    // if currentUser is undefined
+    if (currentUser === undefined) {
+      throw Error("Current user not provided.");
+    }
+
+    // find user in data
+    const user = await User.findOne({ username: currentUser.username });
+
+    // if user don't exists in database
+    if (!user) {
+      throw Error("User don't exists.");
+    }
+
+    return {
+      _id: user._id,
+      username: user.username,
+      password: user.password,
+      email: user.email
+    }
   }
 };
 

@@ -59,7 +59,7 @@ const userResolver = {
 
     // if currentUser is undefined
     if (currentUser === undefined) {
-      throw Error("Current user not provided.");
+      return null;
     }
 
     // find user in data

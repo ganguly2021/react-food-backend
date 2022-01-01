@@ -21,6 +21,12 @@ const userMutation = (`
     email: String!,
     password: String!
   ): Token
+
+  signinUser(
+    username: String!,
+    password: String!
+  ): Token
+
 `);
 
 // export graphql user schema

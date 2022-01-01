@@ -15,7 +15,14 @@ const hashPassword = (password) => {
   return bcrypt.hashSync(password, salt);
 }
 
+const isPasswordMatch = (user_pass, db_pass) => {
+  const isMatch = bcrypt.compareSync(user_pass, db_pass);
+
+  return isMatch;
+}
+
 module.exports = {
   createAuthToken,
-  hashPassword
+  hashPassword,
+  isPasswordMatch
 }

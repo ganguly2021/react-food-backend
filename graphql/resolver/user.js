@@ -1,6 +1,6 @@
 // import user model
 const User = require('./../../models/User');
-const { createAuthToken, hashPassword } = require('../../helper/auth');
+const { createAuthToken, hashPassword, isPasswordMatch } = require('../../helper/auth');
 
 const userResolver = {
   signupUser: async (body) => {
@@ -26,6 +26,29 @@ const userResolver = {
     const payload = {
       username: doc.username,
       email: doc.email
+    }
+
+    // return new user document
+    return { token: createAuthToken(payload, '1hr') };
+  },
+
+  signinUser: async (body) => {
+    // check whether username exists or not
+    const user = await User.findOne({ username: body.username });
+
+    // if user is not exists
+    if (!user) {
+      throw new Error("User don't exists.");
+    }
+
+    // check password is match or not
+    if (!isPasswordMatch(body.password, user.password)) {
+      throw new Error("User password don't match.");
+    }
+
+    const payload = {
+      username: user.username,
+      email: user.email
     }
 
     // return new user document

@@ -6,7 +6,7 @@ const userResolver = {
   signupUser: async (body) => {
 
     // check whether username already exists or not
-    const user = await User.findOne({ username: body.username });
+    const user = await User.findOne({ username: body.username })
 
     // if user is not null
     if (user) {
@@ -63,19 +63,18 @@ const userResolver = {
     }
 
     // find user in data
-    const user = await User.findOne({ username: currentUser.username });
+    const user = await User.findOne({ username: currentUser.username })
+      .populate({
+        path: 'favourites',
+        model: 'recipes'
+      });
 
     // if user don't exists in database
     if (!user) {
       throw Error("User don't exists.");
     }
-
-    return {
-      _id: user._id,
-      username: user.username,
-      password: user.password,
-      email: user.email
-    }
+    
+    return user
   }
 };
 

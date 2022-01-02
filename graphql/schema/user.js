@@ -14,7 +14,7 @@ const userSchema = (`
   }
 `);
 
-
+// create graphql mutation for user
 const userMutation = (`
   signupUser(
     username: String!,
@@ -29,8 +29,14 @@ const userMutation = (`
 
 `);
 
+// create graphql query for user
+const userQuery = (`
+  getCurrentUser: User
+`);
+
 // export graphql user schema
 module.exports = {
   userSchema,
-  userMutation
+  userMutation,
+  userQuery
 }

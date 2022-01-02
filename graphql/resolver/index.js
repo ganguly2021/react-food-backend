@@ -5,7 +5,6 @@ const userResolver = require('./user');
 
 // create graphql root resolver
 const rootResolver = {
-  hello: () => "Hello from graphql.",
   ...recipeResolver,
   ...userResolver
 };

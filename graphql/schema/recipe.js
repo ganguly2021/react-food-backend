@@ -24,9 +24,15 @@ const recipeMutation = (`
   
 `);
 
+// create graphql query for recipe
+const recipeQuery = (`
+  getAllRecipes: [Recipe]
+`);
+
 
 // export graphql recipe schema
 module.exports = {
   recipeSchema,
-  recipeMutation
+  recipeMutation,
+  recipeQuery
 }

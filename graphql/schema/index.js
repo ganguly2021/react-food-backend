@@ -1,14 +1,14 @@
 // import graphql
 const { buildSchema } = require('graphql');
-const { userSchema, userMutation } = require('./user');
-const { recipeSchema, recipeMutation } = require('./recipe');
+const { userSchema, userMutation, userQuery } = require('./user');
+const { recipeSchema, recipeMutation, recipeQuery } = require('./recipe');
 
 // create graphql root schema
 const rootSchema = buildSchema(`
   type Query {
-    hello: String!
-    getAllRecipes: [Recipe]
-    getCurrentUser: User
+    ${userQuery}
+
+    ${recipeQuery}
   }
 
   ${userSchema}

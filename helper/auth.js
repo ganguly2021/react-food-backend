@@ -35,7 +35,7 @@ const isValidToken = async (req, res, next) => {
       req.currentUser = payload;
 
     } catch (err) {
-      console.log(err);
+      console.log("isValidToken : Token not provided.");
     }
   }
 

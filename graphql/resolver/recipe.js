@@ -28,6 +28,13 @@ const recipeResolver = {
 
     // return document
     return doc;
+  },
+  getRecipe: async ({ _id }) => {
+    // get recipe by id document
+    const doc = await Recipe.findOne({ _id: _id });
+
+    // return document
+    return doc;
   }
 };
 

@@ -27,6 +27,7 @@ const recipeMutation = (`
 // create graphql query for recipe
 const recipeQuery = (`
   getAllRecipes: [Recipe]
+  getRecipe(_id: ID!): Recipe
 `);
 
 

@@ -24,7 +24,7 @@ const recipeResolver = {
   },
   getAllRecipes: async () => {
     // get all recipe document
-    const doc = await Recipe.find();
+    const doc = await Recipe.find().sort({ createdDate: "desc" });
 
     // return document
     return doc;

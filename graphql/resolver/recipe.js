@@ -35,6 +35,27 @@ const recipeResolver = {
 
     // return document
     return doc;
+  },
+  searchRecipes: async ({ searchText }) => {
+    let doc = null;
+
+    if (searchText) {
+      // get recipes from search result
+      doc = await Recipe.find({
+        $text: { $search: searchText }
+      }, {
+        score: { $meta: "textScore" }
+      }).sort({
+        score: { $meta: "textScore" }
+      });
+
+    } else {
+      // get all recipes
+      doc = await Recipe.find({}).sort({ likes: 'desc', createdDate: 'desc' });
+    }
+
+    // return document
+    return doc;
   }
 };
 

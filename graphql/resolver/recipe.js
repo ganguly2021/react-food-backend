@@ -64,6 +64,12 @@ const recipeResolver = {
     recipes = await Recipe.find({ username: username }).sort({ createdDate: 'desc' });
 
     return recipes;
+  },
+  deleteUserRecipe: async ({ id }) => {
+
+    const recipe = await Recipe.findOneAndDelete({ _id: id });
+
+    return recipe;
   }
 };
 

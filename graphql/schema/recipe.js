@@ -21,6 +21,10 @@ const recipeMutation = (`
     instructions: String!
     username: String
     ): Recipe
+
+  deleteUserRecipe(
+    id: ID!
+  ): Recipe
   
 `);
 

@@ -25,6 +25,11 @@ const recipeMutation = (`
   deleteUserRecipe(
     id: ID!
   ): Recipe
+
+  likeRecipe(
+    recipeID: ID!
+    username: String!
+  ): Recipe
   
 `);
 

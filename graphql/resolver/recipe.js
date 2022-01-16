@@ -1,5 +1,6 @@
 // import recipe model
 const Recipe = require('./../../models/Recipe');
+const User = require('./../../models/User');
 
 // create all the recipe resolver
 // for graphql
@@ -70,7 +71,17 @@ const recipeResolver = {
     const recipe = await Recipe.findOneAndDelete({ _id: id });
 
     return recipe;
-  }
+  },
+  likeRecipe: async ({ username, recipeID }) => {
+    // increment like count of recipe
+    const recipe = await Recipe.findByIdAndUpdate(recipeID, { $inc: { likes: 1 } });
+
+    // add recipe id to user favourites
+    const user = await User.findOneAndUpdate({ username }, { $addToSet: { favourites: recipeID } });
+
+
+    return recipe;
+  } 
 };
 
 

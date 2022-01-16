@@ -56,6 +56,14 @@ const recipeResolver = {
 
     // return document
     return doc;
+  },
+  getUserRecipes: async ({ username }) => {
+    let recipes = null;
+
+    // find recipes based on username
+    recipes = await Recipe.find({ username: username }).sort({ name: 'desc' });
+
+    return recipes;
   }
 };
 

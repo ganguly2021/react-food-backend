@@ -29,6 +29,7 @@ const recipeQuery = (`
   getAllRecipes: [Recipe]
   getRecipe(_id: ID!): Recipe
   searchRecipes(searchText: String!): [Recipe]
+  getUserRecipes(username: String!): [Recipe]
 `);
 
 

@@ -61,7 +61,7 @@ const recipeResolver = {
     let recipes = null;
 
     // find recipes based on username
-    recipes = await Recipe.find({ username: username }).sort({ name: 'desc' });
+    recipes = await Recipe.find({ username: username }).sort({ createdDate: 'desc' });
 
     return recipes;
   }

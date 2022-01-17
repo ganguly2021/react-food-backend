@@ -30,6 +30,11 @@ const recipeMutation = (`
     recipeID: ID!
     username: String!
   ): Recipe
+
+  unlikeRecipe(
+    recipeID: ID!
+    username: String!
+  ): Recipe
   
 `);
 

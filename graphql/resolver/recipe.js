@@ -81,7 +81,17 @@ const recipeResolver = {
 
 
     return recipe;
-  } 
+  },
+  unlikeRecipe: async ({ username, recipeID }) => {
+    // decrement like count of recipe
+    const recipe = await Recipe.findByIdAndUpdate(recipeID, { $inc: { likes: -1 } });
+
+    // add recipe id to user favourites
+    const user = await User.findOneAndUpdate({ username }, { $pull: { favourites: recipeID } });
+
+
+    return recipe;
+  }
 };
 
 

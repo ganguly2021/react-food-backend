@@ -64,10 +64,10 @@ const userResolver = {
 
     // find user in data
     const user = await User.findOne({ username: currentUser.username })
-      .populate({
-        path: 'favourites',
-        model: 'recipes'
-      });
+      // .populate({
+      //   path: 'favourites',
+      //   model: 'recipes'
+      // });
 
     // if user don't exists in database
     if (!user) {

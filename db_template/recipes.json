@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Fish Curry",
+    "category": "Lunch",
+    "description": "How to make fish curry in indian style ?",
+    "instructions": "Get some fish. Make some curry & combine it together.",
+    "username": "sandeep"
+  },
+  {
+    "name": "Milk Shake",
+    "category": "Snack",
+    "description": "How to make milk shake in home ?",
+    "instructions": "Get some mango pulp. Blend it with milk in blender.",
+    "username": "jhon"
+  },
+  {
+    "name": "Sandwich",
+    "category": "Snack",
+    "description": "How to make a sandwich in home ?",
+    "instructions": "Slice some breads & bake a patty. Then sandwich it & its done.",
+    "username": "flex"
+  },
+  {
+    "name": "Chowmein",
+    "category": "Dinner",
+    "description": "How to make chowmein in home ?",
+    "instructions": "Boil water mix chomein. Cut some veggies & mix it. Then its done.",
+    "username": "stone"
+  },
+  {
+    "name": "Noodles",
+    "category": "Dinner",
+    "description": "How to make noodles ?",
+    "instructions": "Boil water mix noodles. Mix some veggies & its done.",
+    "username": "Uber"
+  },
+  {
+    "name": "Smoothie",
+    "category": "Breakfast",
+    "description": "How to make smoothie ?",
+    "instructions": "Cut some fruits & add some milk in blender with fruits. Then its done.",
+    "username": "sandeep"
+  },
+  {
+    "name": "Pizza",
+    "category": "Breakfast",
+    "description": "How to make pizza in home ?",
+    "instructions": "Create the flour base then add some topping in it. Then put it oven & its done.",
+    "username": "jhon"
+  },
+  {
+    "name": "Fried Chicken",
+    "category": "Lunch",
+    "description": "How to make fried chicken in home ?",
+    "instructions": "Get some fresh chicken from store. then marinate it with mexican sauce & fry it.",
+    "username": "flex"
+  },
+  {
+    "name": "Vanilla Shake",
+    "category": "Dinner",
+    "description": "How to make vanilla shake in home ?",
+    "instructions": "Get some vanilla icecream then add some milk in it & mix it in blender.",
+    "username": "stone"
+  },
+  {
+    "name": "Mix Veg",
+    "category": "Dinner",
+    "description": "How to make mix veg ?",
+    "instructions": "Cut some veggies & mix it in frying pan with some mexican masala.",
+    "username": "Uber"
+  }
+]

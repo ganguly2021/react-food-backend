@@ -1,0 +1,27 @@
+[
+  {
+    "username": "sandeep",
+    "email": "sandeep@abc.com",
+    "password": "$2a$10$PhjCNhS8kIBN5vTiWLH21.vtRrv2mmIHRQx9aqZYCQVVMAt7tvibi"
+  },
+  {
+    "username": "jhon",
+    "email": "jhon@abc.com",
+    "password": "$2a$10$JEd1bpDAw7nSaU7qyVuAge.xBxL.H4iviD.YzkeGLuBWYUE1.oOTm"
+  },
+  {
+    "username": "flex",
+    "email": "flex@abc.com",
+    "password": "$2a$10$CSzByg2LvIZAfRR863rcp.w.OaY1ARHOM1S/fNGlR7JOnsvv/oQbe"
+  },
+  {
+    "username": "stone",
+    "email": "stone@abc.com",
+    "password": "$2a$10$/aC0.JriY20l6U0xVCaJX.MJHvKWvdmTXpHFpdkEYNPfMKW2/e4Jm"
+  },
+  {
+    "username": "uber",
+    "email": "uber@abc.com",
+    "password": "$2a$10$09WBo72jusfXP6CahK8RauRLh7MT1Q8/7JFqY5EmDYoL2d9z1Kz6C"
+  }
+]
